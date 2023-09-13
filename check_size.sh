@@ -21,7 +21,7 @@ nodes["Holograph"]="/root/.config/holograph"
 nodes["Minima"]="/root/minimadocker*"
 
 # Получаем информацию о диске
-total_space=$(df --output=avail -BG $HOME | tail -1 | tr -d 'G ')
+total_space=$(df --output=size -BG $HOME | tail -1 | tr -d 'G ')
 used_space=$(df --output=used -BG $HOME | tail -1 | tr -d 'G ')
 
 # Шапка
