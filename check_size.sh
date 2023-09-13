@@ -5,6 +5,8 @@ GREEN='\033[0;32m'
 NC='\033[0m' # Нет цвета
 CYAN='\033[0;36m'
 
+sudo apt-get install bc
+
 declare -A nodes
 
 # Список нод и их директорий
