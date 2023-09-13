@@ -5,7 +5,16 @@ GREEN='\033[0;32m'
 NC='\033[0m' # Нет цвета
 CYAN='\033[0;36m'
 
-sudo apt-get install bc -y
+# Проверка на наличие утилиты bc
+if ! command -v bc &> /dev/null; then
+    echo "Утилита bc не найдена. Пытаюсь установить..."
+    sudo apt update && sudo apt install -y bc
+    if [ $? -ne 0 ]; then
+        echo "Не удалось установить bc. Прерывание выполнения скрипта."
+        exit 1
+    fi
+fi
+
 
 declare -A nodes
 
